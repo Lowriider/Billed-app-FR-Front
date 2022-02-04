@@ -181,7 +181,7 @@ describe("Given I am connected as an employee", () => {
                     document.body.innerHTML = BillsUI({error: "Erreur 404"})
                     mockStore.bills.mockImplementationOnce(() => {
                         return {
-                            list: () => {
+                            update: () => {
                                 return Promise.reject(new Error("Erreur 404"))
                             }
                         }
@@ -195,7 +195,7 @@ describe("Given I am connected as an employee", () => {
                     document.body.innerHTML = BillsUI({error: "Erreur 500"})
                     mockStore.bills.mockImplementationOnce(() => {
                         return {
-                            list: () => {
+                            update: () => {
                                 return Promise.reject(new Error("Erreur 500"))
                             }
                         }
