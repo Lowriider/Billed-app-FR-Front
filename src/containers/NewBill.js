@@ -29,14 +29,14 @@ export default class NewBill {
       const email = JSON.parse(localStorage.getItem("user")).email
       formData.append('file', file)
       formData.append('email', email)
-
+      this.handleStore(formData, fileName);
     }
     else {
       $('.errorMessage').show();
       this.document.querySelector(`input[data-testid='file']`).value = null;
     }
   }
-  
+
   handleStore(formData, fileName) {
     this.store
         .bills()
