@@ -20,7 +20,7 @@ export const filteredBills = (data, status) => {
         const userEmail = JSON.parse(localStorage.getItem("user")).email
         selectCondition =
           (bill.status === status) &&
-          ![...USERS_TEST, userEmail].includes(bill.email)
+          [...USERS_TEST, userEmail].includes(bill.email)
       }
 
       return selectCondition
@@ -96,6 +96,7 @@ export default class {
       $('.dashboard-right-container div').html(DashboardFormUI(bill))
       $('.vertical-navbar').css({ height: '150vh' })
       this.counter ++
+      this.id = ''
     } else {
       $(`#open-bill${bill.id}`).css({ background: '#0D5AE5' })
 
